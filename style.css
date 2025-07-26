@@ -1,0 +1,748 @@
+/* ==========================================================================
+   1. Root Variables
+   ========================================================================== */
+:root {
+  --primary-color: #001796;
+  --primary-hover: #0013a0;
+  --text-light: #ffffff;
+  --text-dark: #333333;
+  --text-muted: #666666;
+  --bg-light-gray: #f8f9fa;
+  --spacing-unit: 80px;
+  --shadow-light: 0 2px 10px rgba(0, 23, 150, 0.1);
+  --shadow-medium: 0 4px 15px rgba(0, 23, 150, 0.2);
+}
+
+/* ==========================================================================
+   2. Base Styles
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text-dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h3,
+h4 {
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ==========================================================================
+   3. Utility Classes
+   ========================================================================== */
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.border-bottom {
+  border-bottom: 2px solid black;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-flex-stretch {
+  align-self: stretch;
+}
+
+.full-width {
+  width: 100%;
+  max-width: none;
+}
+
+/* ==========================================================================
+   4. Icon Styles
+   ========================================================================== */
+.fas.fa-paw {
+  color: black;
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 25px;
+  margin-right: 8px;
+}
+
+.herosection .fas.fa-paw {
+  color: white;
+}
+
+.fas.fa-paw::before,
+.fas.fa-paw::after {
+  content: "\f1b0";
+  font-family: "Font Awesome 6 Free", sans-serif;
+  font-weight: 900;
+  position: absolute;
+  opacity: 1;
+}
+
+.fas.fa-paw::before {
+  transform: translate(0%, -40%) rotate(25deg) scale(0.8);
+}
+
+.fas.fa-paw::after {
+  transform: translate(50%, 40%) rotate(25deg) scale(0.8);
+}
+
+/* ==========================================================================
+   5. Button Styles
+   ========================================================================== */
+button {
+  border-radius: 25px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  cursor: pointer;
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 23, 150, 0.3);
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 23, 150, 0.4);
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  font-size: 13px;
+}
+
+.hero-btn {
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.view-more-btn,
+.read-more-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.add-to-cart {
+  padding: 8px 16px;
+  font-size: 12px;
+  background-color: #28a745;
+  border-radius: 20px;
+}
+
+.add-to-cart:hover {
+  background-color: #218838;
+}
+
+.btn-alt {
+  background-color: aliceblue;
+  color: var(--text-dark);
+}
+
+/* ==========================================================================
+   6. Header & Hero Section
+   ========================================================================== */
+.herosection {
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.yMAe7fSpK-v38yqUKK7lJQHaES%3Fpid%3DApi&f=1&ipt=236b25938ad096bf0a18fd9c519ddcb2a99f5d5c95ef944b9ea4c96e601f078b&ipo=images");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  color: var(--text-light);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  gap: 17px;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.herocontent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.herocontent h1 {
+  font-size: 3rem;
+}
+
+/* ==========================================================================
+   7. Shop Section
+   ========================================================================== */
+.shop-section {
+  padding: 60px 0;
+  background-color: var(--bg-light-gray);
+}
+
+/* This rule is crucial for the shop category links layout */
+.menu-linkks-cont ul {
+  display: flex;
+  gap: 10px;
+}
+
+.imgs-container {
+  display: flex;
+  gap: 20px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.shop-item {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.shop-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.shop-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.item-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.shop-item:hover .item-overlay {
+  transform: translateY(0);
+}
+
+.item-overlay h3 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.item-overlay p {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.shop-btn {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ==========================================================================
+   8. Services Section
+   ========================================================================== */
+/* ==========================================================================
+   8. Services Section
+   ========================================================================== */
+.services-section {
+  padding: 60px 0;
+  background-color: var(--bg-light-gray);
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--text-dark);
+}
+
+.service-header h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Parent container for the three columns */
+.services-section .parent {
+  display: flex;
+  gap: 15px;
+  max-width: 800px;
+  margin: 40px auto 0;
+  align-items: stretch; /* Make columns equal height */
+  height: 415px; /* Set fixed height: 200px card + 15px gap + 200px card */
+}
+
+/* Style for each column */
+.services-section .column {
+  flex: 1; /* Distribute space, e.g., 1 part for each of the first two columns */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Make the last column (Adoption) wider */
+.services-section .column:last-child {
+  flex: 1.25; /* Give it more space */
+}
+
+/* Generic card styling inside the new structure */
+.services-card {
+  flex: 1; /* This makes the card fill its share of the column's height */
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The .tall class is now mainly for semantic distinction, as flexbox handles the height */
+.services-card.tall {
+    /* Flexbox handles the height automatically since it's the only item in its column */
+}
+
+/* Re-apply overlay and image styles to ensure they work correctly */
+.services-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlaytxt {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  transition: opacity 0.3s ease;
+}
+
+.overlay-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.services-card:hover .overlay-layer {
+  opacity: 1;
+}
+
+.services-card:hover .overlaytxt {
+  opacity: 0;
+}
+/* ==========================================================================
+   9. About Us & Our Team Section
+   ========================================================================== */
+.about-us-header,
+.our-team-header,
+.our-blog-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #000;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+.our-team-header {
+  border-bottom-color: #bde0fe;
+}
+
+.our-blog-header {
+  border-bottom-width: 2px;
+}
+
+.about-us-cont-flex {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+}
+
+.about-us-img-container {
+  position: relative;
+  max-width: 50%;
+  height: 50%;
+}
+
+.img2 img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 50%);
+  max-width: 50%;
+  border-radius: 10px;
+  border: 1px solid wheat;
+  overflow: hidden;
+}
+
+.coulmn2 {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.coulmn3 {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  width: 30%;
+}
+
+.aboutus-flex-cont {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 0 90px;
+}
+
+.content-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+.our-blog-flex-container{margin-bottom: 40px;}
+.content-section .card {
+  flex: 1;
+  margin: 20px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.content-section .card img {
+  width: 100%;
+  height: auto;
+}
+
+.linkssocial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* ==========================================================================
+   10. Blog Section
+   ========================================================================== */
+.row {
+  display: flex;
+  gap: 17px;
+}
+
+.coulmnn {
+  flex: 50%;
+}
+
+/* ==========================================================================
+   11. Footer
+   ========================================================================== */
+.footer {
+  background: #1a1a1a;
+  color: white;
+  padding: 60px 0 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #0a149f;
+}
+
+.footer-logo p,
+.footer-contact p,
+.footer-bottom p {
+  color: #ccc;
+}
+
+.footer-logo p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #0a149f;
+  color: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #0a149f;
+  transform: translateY(-3px);
+}
+
+.footer-section h4 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-contact i {
+  color: #0a149f;
+  width: 20px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding: 20px 0;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-bottom-links a {
+  color: #ccc;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: #0a149f;
+}
+/* CONTAINER FOR THE TEAM CARDS */
+.content-section1 {
+  display: flex;          /* Arranges cards in a row. */
+  gap: 20px;              /* Creates space between cards, replacing margins. */
+  overflow-x: auto;       /* Adds a horizontal scrollbar if cards overflow the screen width. */
+  padding-bottom: 15px;   /* Adds space below the cards for the scrollbar. */
+}
+
+/* INDIVIDUAL TEAM MEMBER CARD */
+.content-section1 .card {
+  flex: 0 0 250px;      /* Prevents cards from shrinking and sets a fixed base width of 250px. */
+  margin: 0;             /* Removed old margins. Gap handles the spacing now. */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-section1 .card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   12. Media Queries
+   ========================================================================== */
+/* ==========================================================================
+   12. Media Queries
+   ========================================================================== */
+@media (max-width: 900px) {
+  .services-grid {
+    flex-direction: column;
+    gap: 10px;
+  
+  .services-section .parent {
+    flex-direction: column;
+    height: auto; /* Reset fixed height */
+    align-items: stretch;
+    gap: 10px;
+  }
+  .services-section .column {
+    flex-direction: row;
+    width: 100%;
+  }
+  .services-card, .services-card.tall {
+    height: 200px;
+    width: 100%;
+    min-width: unset;
+    flex: 1;
+  }
+}
+  .services-card,
+  .services-card.tall {
+    min-width: unset;
+    width: 100%;
+    height: 200px;
+    flex: unset;
+  }
+  .services-card.tall {
+    height: 200px;
+  }
+}
+
+@media (max-width: 766px) {
+  /* This hides the second, smaller image in the about section */
+  .about-us-img-container .img2 {
+    display: none !important;
+  }
+
+  /* This hides the entire blog section */
+  .our-blog-section {
+    display: none !important;
+  }
+
+  /* Stack team and about */
+  .about-us-cont-flex {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+  .coulmn2,
+  .coulmn3 {
+    width: 100%;
+    max-width: unset;
+  }
+  .content-section1 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .content-section1 .card {
+    flex-basis: 100%;
+    margin: 8px 0;
+  }
+}
