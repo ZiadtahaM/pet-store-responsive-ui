@@ -30,8 +30,6 @@ The project leverages modern web development standards for speed and reliability
 1. Clone the repository.
 2. Open index.html in a web browser.
 
-Live Demo: https://ziadtaham.github.io/pet-store-responsive-ui/
-
 ---
 
 Professional digital presence for modern pet-centric businesses.
